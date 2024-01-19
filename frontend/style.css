@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+
+.centre-wrapper {
+    display: flex;
+    height: 100svh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-exp {
+    width: 60%;
+    padding: 4px;
+}
+
+.textexp {
+    display: block;
+    height: 18px;
+    text-align: center;
+}
+
+.input-text {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    border-bottom: 0.6px solid rgb(232, 232, 232);
+    transition: border-bottom ease 0.5s;
+}
+
+.input-text:focus {
+    border: none;
+    outline: none;
+    border-bottom: 0.6px solid rgb(161, 161, 161);
+}
+
+.input-text::placeholder {
+    font-size: 18px;
+    transition: font-size ease 0.4s;
+}
+
+.input-text:focus::placeholder {
+    font-size: 11px;
+}
