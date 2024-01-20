@@ -9,13 +9,25 @@
 <body>
     <div class="centre-wrapper">
         <div class="box-exp">
-            <div class="textexp"><span id="textexpvalue"></span></div>
+            <div class="textexp"><span id="res"></span></div>
             <div class="input-box">
-                <input class="input-text" type="text" id="change" name="text" placeholder="Введите выражение словами или символами">
+                <input class="input-text" type="text" oninput="calculate(this)" placeholder="Введите выражение словами или символами">
                 <script>
-                    change.oninput = function() {
-                        textexpvalue.textContent = change.value;
-                    };
+                        function calculate(input) {
+                            fetch("http://127.0.0.1:81/calculate", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",  // Указываем тип контента
+                                },
+                                body: JSON.stringify({ "text": input.value }), // Преобразуем данные в формат JSON
+                            })
+                            .then(async res => {
+                                document.getElementById("res").textContent = (await res.json())['result'];
+                            })
+                            .catch(error => {
+                                console.error("Ошибка при отправке запроса:", error);
+                            });
+                        }
                 </script>
             </div>
         </div>

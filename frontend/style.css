@@ -22,7 +22,7 @@ body {
 
 .input-text {
     width: 100%;
-    font-size: 16px;
+    font-size: 2rem;
     border: none;
     border-bottom: 0.6px solid rgb(232, 232, 232);
     transition: border-bottom ease 0.5s;
@@ -35,10 +35,10 @@ body {
 }
 
 .input-text::placeholder {
-    font-size: 18px;
+    font-size: 2rem;
     transition: font-size ease 0.4s;
 }
 
 .input-text:focus::placeholder {
-    font-size: 11px;
+    font-size: 1.2rem;
 }
