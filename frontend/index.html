@@ -14,7 +14,7 @@
                 <input class="input-text" type="text" oninput="calculate(this)" placeholder="Введите выражение словами или символами">
                 <script>
                         function calculate(input) {
-                            fetch("http://127.0.0.1:81/calculate", {
+                            fetch("http://127.0.0.1:8000/calculate", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json",  // Указываем тип контента
@@ -23,7 +23,13 @@
                             })
                             .then(async res => {
                                 document.getElementById("res").textContent = (await res.json())['result'];
+                                resElement.classList.add("animate-res");
+
+                                resElement.addEventListener("animationend", () => {
+                                    resElement.classList.remove("animate-res");
+                                });
                             })
+
                             .catch(error => {
                                 console.error("Ошибка при отправке запроса:", error);
                             });

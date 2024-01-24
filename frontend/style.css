@@ -1,3 +1,9 @@
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
 body {
     margin: 0;
 }
@@ -16,13 +22,22 @@ body {
 
 .textexp {
     display: block;
-    height: 18px;
+    height: 2rem;
     text-align: center;
+}
+
+#res {
+    font-size: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-res {
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .input-text {
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.6rem;
     border: none;
     border-bottom: 0.6px solid rgb(232, 232, 232);
     transition: border-bottom ease 0.5s;
@@ -35,7 +50,7 @@ body {
 }
 
 .input-text::placeholder {
-    font-size: 2rem;
+    font-size: 1.6rem;
     transition: font-size ease 0.4s;
 }
 
